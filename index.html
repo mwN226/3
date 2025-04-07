@@ -1,0 +1,94 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Simple JHA Generator</title>
+  <style>
+    body { font-family: Arial, sans-serif; padding: 20px; background: #f7f7f7; }
+    label { font-weight: bold; margin-top: 10px; display: block; }
+    select, button, textarea {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      margin-bottom: 15px;
+      font-size: 16px;
+    }
+    #output {
+      white-space: pre-wrap;
+      background: #eef;
+      padding: 15px;
+      border-radius: 6px;
+      border: 1px solid #aac;
+    }
+    button {
+      background: #0055a4;
+      color: white;
+      border: none;
+      border-radius: 5px;
+    }
+    button:hover {
+      background: #003f7d;
+    }
+  </style>
+</head>
+<body>
+
+<h2>Simple JHA Generator</h2>
+
+<label for="task">Task:</label>
+<select id="task">
+  <option value="Working at height">Working at height</option>
+  <option value="Manual lifting">Manual lifting</option>
+  <option value="Using power tools">Using power tools</option>
+</select>
+
+<label for="tools">Tools:</label>
+<select id="tools">
+  <option value="Ladder">Ladder</option>
+  <option value="Harness">Harness</option>
+  <option value="Grinder">Grinder</option>
+</select>
+
+<label for="hazards">Hazards:</label>
+<select id="hazards">
+  <option value="Falls">Falls</option>
+  <option value="Trips">Trips</option>
+  <option value="Noise">Noise</option>
+</select>
+
+<label for="controls">Controls:</label>
+<select id="controls">
+  <option value="Use fall protection">Use fall protection</option>
+  <option value="Wear hearing protection">Wear hearing protection</option>
+  <option value="Spotter present">Spotter present</option>
+</select>
+
+<button onclick="generateJHA()">Generate JHA</button>
+
+<h3>Generated Output:</h3>
+<div id="output">Your JHA will appear here...</div>
+
+<script>
+function generateJHA() {
+  const task = document.getElementById('task').value;
+  const tools = document.getElementById('tools').value;
+  const hazards = document.getElementById('hazards').value;
+  const controls = document.getElementById('controls').value;
+
+  const output = 
+    `Task: ${task}
+` +
+    `Tools: ${tools}
+` +
+    `Hazards: ${hazards}
+` +
+    `Controls: ${controls}`;
+
+  document.getElementById('output').innerText = output;
+}
+</script>
+
+</body>
+</html>
